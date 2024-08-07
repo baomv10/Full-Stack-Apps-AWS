@@ -19,6 +19,12 @@ To complete this project, you will need to:
 
 Successful URL responses should have a 200 code. Ensure that you include error codes for the scenario that someone uploads something other than an image and for other common errors.
 
+## Install apckage
+npm i
+
+## Run application
+npm run dev
+
 ## AWS Elastic Beanstalk
 http://full-stack-apps-aws-dev.us-east-1.elasticbeanstalk.com
 

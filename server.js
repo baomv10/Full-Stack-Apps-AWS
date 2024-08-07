@@ -1,8 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
-import { filterImageFromURL, deleteLocalFiles } from "./util/util.js";
-import path from "path";
-import fs from "fs";
+import { filterImageFromURL, deleteLocalFiles } from "./src/util/util.js";
 
 // Init the Express application
 const app = express();
