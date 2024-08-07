@@ -26,24 +26,18 @@ app.use(bodyParser.json());
 //    image_url: URL of a publicly accessible image
 // RETURNS
 //   the filtered image file [!!TIP res.sendFile(filteredpath); might be useful]
-app.get("/filteredimage", async (req, res) => {
+app.get("/filteredimage", (req, res) => {
   const image_url = req.query.image_url;
   if (!image_url) {
-    res.send("image_url is required");
+    res.status(400).send("image_url is required");
     return;
   }
-  const file = path.join(image_url);
-  if (!fs.existsSync(file)) {
-    res.send("image does not exist");
-    return;
-  }
-  filterImageFromURL(image_url)
-    .then((file) => {
-      res.sendFile(file);
-    })
-    .finally(() => {
-      deleteLocalFiles([image_url]);
+
+  filterImageFromURL(image_url).then((file) => {
+    res.status(200).sendFile(file, () => {
+      deleteLocalFiles([file]);
     });
+  });
 });
 
 // Root Endpoint
