@@ -19,7 +19,7 @@ To complete this project, you will need to:
 
 Successful URL responses should have a 200 code. Ensure that you include error codes for the scenario that someone uploads something other than an image and for other common errors.
 
-## Install apckage
+## Install package
 npm i
 
 ## Run application
